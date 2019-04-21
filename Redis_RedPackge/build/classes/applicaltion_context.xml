@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsdT
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<context:annotation-config></context:annotation-config>
+
+	<context:property-placeholder
+		location="classpath:pool.properties" />
+	<bean class="com.zaxxer.hikari.HikariDataSource" id="dataSource">
+		<property name="driverClassName" value="${driver}"></property>
+		<property name="connectionTimeout" value="${timeout}"></property>
+		<property name="jdbcUrl" value="${url}"></property>
+		<property name="maximumPoolSize" value="${maxsize}"></property>
+		<property name="maxLifetime" value="${maxLifetime}"></property>
+		<property name="minimumIdle" value="${minsize}"></property>
+		<property name="password" value="${password}"></property>
+		<property name="readOnly" value="${readOnly}"></property>
+		<property name="username" value="${user}"></property>
+		<property name="idleTimeout" value="${idleTimeout}"></property>
+	</bean>
+
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
+		id="sqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation"
+			value="classpath:mybatis.cfg.xml"></property>
+	</bean>
+	<bean
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		id="dataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<tx:annotation-driven
+		transaction-manager="dataSourceTransactionManager" />
+
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.hzm.dao"></property>
+		<property name="beanName" value="sqlSessionFactoryBean"></property>
+
+
+	</bean>
+	
+	
+	
+	<bean  class="com.google.gson.Gson" id="gson"></bean>
+
+</beans>

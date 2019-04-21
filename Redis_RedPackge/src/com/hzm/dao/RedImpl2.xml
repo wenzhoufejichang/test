@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzm.dao.RedImpl2">
+	<select id="getNumber" parameterType="red" resultType="red">
+		SELECT *
+		FROM redpackge WHERE id=#{id} ;
+	</select>
+	<update id="updateRedpackge" parameterType="red">
+		UPDATE redpackge SET
+		number= number-1,version=version+1
+		<where>
+
+			<if test="id !=null">
+
+				and id=#{id}
+			</if>
+			<if test="version !=null">
+
+				and version =#{version}
+			</if>
+
+		</where>
+
+	</update>
+	<insert id="update" parameterType="customer">
+		INSERT INTO customer
+		(id,times)
+		VALUES(#{id},#{times});
+	</insert>
+</mapper>
