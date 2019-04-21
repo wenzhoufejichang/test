@@ -1,8 +1,6 @@
 package tt;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CCCC {
 	public static void main(String[] args) {
@@ -15,6 +13,8 @@ public class CCCC {
 		//测试git远端拉去
 		//同步到远端会发生冲突
 		//同步到远端会发生冲突
+		//同步到远端会发生冲突
+
 	}
 }
 
