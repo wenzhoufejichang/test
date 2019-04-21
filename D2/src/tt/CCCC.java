@@ -19,6 +19,7 @@ public class CCCC {
 
 class A implements Runnable {
 
+//测试远端2
 	private CountDownLatch c;
 	private Integer number = 0;
 
@@ -28,6 +29,7 @@ class A implements Runnable {
 	}
 
 	public Integer getNumber() {
+		//测试远端3
 		return number;
 	}
 
