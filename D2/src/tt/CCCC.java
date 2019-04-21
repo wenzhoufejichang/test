@@ -14,6 +14,7 @@ public class CCCC {
 		new Thread(b, "c号").start();
 		//测试git远端拉去
 		//同步到远端会发生冲突
+		//同步到远端会发生冲突
 	}
 }
 
