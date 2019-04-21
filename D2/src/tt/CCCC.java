@@ -14,13 +14,17 @@ public class CCCC {
 		// 同步到远端会发生冲突
 		// 同步到远端会发生冲突
 		// 同步到远端会发生冲突
-//修改
+
+		// 修改
+
+		// 12
+
 	}
 }
 
 class A implements Runnable {
 
-	
+	// 12
 	private CountDownLatch c;
 	private Integer number = 0;
 
@@ -30,7 +34,7 @@ class A implements Runnable {
 	}
 
 	public Integer getNumber() {
-		
+		// 13
 		return number;
 	}
 
