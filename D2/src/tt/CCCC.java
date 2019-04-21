@@ -13,6 +13,7 @@ public class CCCC {
 		new Thread(b, "b号").start();
 		new Thread(b, "c号").start();
 		//测试git远端拉去
+		//测试冲突的解决
 	}
 }
 
