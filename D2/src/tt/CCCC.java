@@ -10,17 +10,17 @@ public class CCCC {
 		new Thread(a, "a号").start();
 		new Thread(b, "b号").start();
 		new Thread(b, "c号").start();
-		//测试git远端拉去
-		//同步到远端会发生冲突
-		//同步到远端会发生冲突
-		//同步到远端会发生冲突
+		// 测试git远端拉去
+		// 同步到远端会发生冲突
+		// 同步到远端会发生冲突
+		// 同步到远端会发生冲突
 
 	}
 }
 
 class A implements Runnable {
 
-//测试远端2
+	
 	private CountDownLatch c;
 	private Integer number = 0;
 
@@ -30,7 +30,7 @@ class A implements Runnable {
 	}
 
 	public Integer getNumber() {
-		//测试远端3
+		
 		return number;
 	}
 
